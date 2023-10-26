@@ -2,6 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import StackNavigator from './StackNavigator';
+import Profile from '../view/Profile';
 
 const Drawer = createDrawerNavigator();
 
@@ -13,6 +14,7 @@ const DrawerNavigator = () => {
         component={StackNavigator}
         options={{headerShown: false}}
       />
+      <Drawer.Screen name="Profile" component={Profile} />
     </Drawer.Navigator>
   );
 };
