@@ -16,7 +16,11 @@ export default function StackNavigator() {
         component={Home}
         options={{headerShown: false}}
       />
-      <StackNavi.Screen name="Detail" component={Detail} />
+      <StackNavi.Screen
+        name="Detail"
+        component={Detail}
+        options={{headerBackTitleVisible: false}}
+      />
       <StackNavi.Screen
         name="Feed Setting"
         component={FeedSetting}

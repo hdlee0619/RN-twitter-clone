@@ -1,9 +1,72 @@
 import React from 'react';
 
-import {Text} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 
-const Detail = () => {
-  return <Text>Detail Page</Text>;
+const Detail = props => {
+  const {author, profileImgUrl, createdAt, authorId, desc, contentImg} =
+    props.route.params;
+
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.authorContainer}>
+        <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
+        <View>
+          <Text style={styles.author}>{author}</Text>
+          <Text style={styles.authorId}>@{authorId}</Text>
+        </View>
+      </View>
+      <View style={styles.descContainer}>
+        <Text style={styles.desc}>{desc}</Text>
+        {contentImg && (
+          <Image style={styles.contentImg} source={{uri: contentImg}} />
+        )}
+        <Text style={styles.createdAt}>{createdAt}</Text>
+      </View>
+    </ScrollView>
+  );
 };
 
 export default Detail;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    padding: 16,
+  },
+  profileImg: {
+    width: 40,
+    height: 40,
+    marginRight: 4,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#c8c8c8',
+  },
+  authorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  author: {
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  authorId: {fontSize: 15, color: '#555555'},
+  descContainer: {
+    paddingVertical: 16,
+  },
+  desc: {
+    fontSize: 15,
+    color: 'black',
+  },
+  contentImg: {
+    width: '100%',
+    minHeight: 200,
+    marginVertical: 16,
+    borderRadius: 16,
+    resizeMode: 'cover',
+  },
+  createdAt: {
+    fontSize: 14,
+    color: '#666666',
+  },
+});
