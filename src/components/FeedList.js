@@ -1,8 +1,9 @@
 import React from 'react';
 
-import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
 const Item = ({
+  navigation,
   author,
   profileImgUrl,
   authorId,
@@ -10,34 +11,46 @@ const Item = ({
   desc,
   contentImg,
 }) => {
+  const detailProps = {
+    author,
+    profileImgUrl,
+    authorId,
+    createdAt,
+    desc,
+    contentImg,
+  };
+
   return (
-    <View style={styles.itemContainer}>
-      <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
-      <View style={styles.contentContainer}>
-        <View style={styles.authorContainer}>
-          <Text style={styles.author}>{author}</Text>
-          <Text style={styles.authorId}>@{authorId}</Text>
-          <Text style={styles.createdAt}>· {createdAt}</Text>
-        </View>
-        <View style={styles.descContainer}>
-          <Text style={styles.desc}>{desc}</Text>
-        </View>
-        {contentImg && (
-          <View style={styles.contentImgContainer}>
-            <Image style={styles.contentImg} source={{uri: contentImg}} />
+    <Pressable onPress={() => navigation.navigate('Detail', {...detailProps})}>
+      <View style={styles.itemContainer}>
+        <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
+        <View style={styles.contentContainer}>
+          <View style={styles.authorContainer}>
+            <Text style={styles.author}>{author}</Text>
+            <Text style={styles.authorId}>@{authorId}</Text>
+            <Text style={styles.createdAt}>· {createdAt}</Text>
           </View>
-        )}
+          <View style={styles.descContainer}>
+            <Text style={styles.desc}>{desc}</Text>
+          </View>
+          {contentImg && (
+            <View style={styles.contentImgContainer}>
+              <Image style={styles.contentImg} source={{uri: contentImg}} />
+            </View>
+          )}
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
-const FeedList = () => {
+const FeedList = ({navigation}) => {
   return (
     <FlatList
       data={MOCK_DATA}
       renderItem={({item}) => (
         <Item
+          navigation={navigation}
           author={item.author}
           profileImgUrl={item.profileImgUrl}
           authorId={item.authorId}

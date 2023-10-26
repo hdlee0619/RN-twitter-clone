@@ -9,7 +9,7 @@ const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation} />
-      <FeedList />
+      <FeedList navigation={navigation} />
     </SafeAreaView>
   );
 };
