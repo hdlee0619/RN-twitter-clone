@@ -4,18 +4,18 @@ import NavigationContext from '../context/NavigationContext';
 import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
 const Item = ({
-  author,
+  user,
   navigation,
   profileImgUrl,
-  authorId,
+  userId,
   createdAt,
   desc,
   contentImg,
 }) => {
   const detailProps = {
-    author,
+    user,
     profileImgUrl,
-    authorId,
+    userId,
     createdAt,
     desc,
     contentImg,
@@ -26,9 +26,9 @@ const Item = ({
       <View style={styles.itemContainer}>
         <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
         <View style={styles.contentContainer}>
-          <View style={styles.authorContainer}>
-            <Text style={styles.author}>{author}</Text>
-            <Text style={styles.authorId}>@{authorId}</Text>
+          <View style={styles.userContainer}>
+            <Text style={styles.user}>{user}</Text>
+            <Text style={styles.userId}>@{userId}</Text>
             <Text style={styles.createdAt}>· {createdAt}</Text>
           </View>
           <View style={styles.descContainer}>
@@ -53,9 +53,9 @@ const FeedList = () => {
       renderItem={({item}) => (
         <Item
           navigation={navigation}
-          author={item.author}
+          user={item.user}
           profileImgUrl={item.profileImgUrl}
-          authorId={item.authorId}
+          userId={item.userId}
           createdAt={item.createdAt}
           desc={item.desc}
           contentImg={item.contentImg}
@@ -80,17 +80,17 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 8,
   },
-  authorContainer: {
+  userContainer: {
     flexDirection: 'row',
-    author: {fontSize: 17},
+    user: {fontSize: 17},
     alignItems: 'baseline',
   },
-  author: {
+  user: {
     fontSize: 15,
     color: 'black',
     fontWeight: 'bold',
   },
-  authorId: {marginLeft: 4, fontSize: 15, color: '#555555'},
+  userId: {marginLeft: 4, fontSize: 15, color: '#555555'},
   createdAt: {marginLeft: 4, fontSize: 14, color: '#666666'},
   descContainer: {
     paddingVertical: 8,
@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
 const MOCK_DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    author: '몽자',
-    authorId: 'mongja',
+    user: '몽자',
+    userId: 'mongja',
     profileImgUrl:
       'https://i.namu.wiki/i/qCVlq5dYOT_0IRa0NwnYktixrJZMMlEzpe5RVTCEU6GSbzNSRZCZpOMoYp5QMTFy9P22ptEMyfG3Fog3mF8FBvtyum6JxExeReg2_X1J3KRcQ7b1EO67zrstqJ4dP1BIh1IvHKlrrak3I_3YeRFMlA.webp',
     desc: '휴지벽에 도전하는 강아지',
@@ -131,8 +131,8 @@ const MOCK_DATA = [
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    author: '몽자',
-    authorId: 'mongja',
+    user: '몽자',
+    userId: 'mongja',
     profileImgUrl:
       'https://i.namu.wiki/i/qCVlq5dYOT_0IRa0NwnYktixrJZMMlEzpe5RVTCEU6GSbzNSRZCZpOMoYp5QMTFy9P22ptEMyfG3Fog3mF8FBvtyum6JxExeReg2_X1J3KRcQ7b1EO67zrstqJ4dP1BIh1IvHKlrrak3I_3YeRFMlA.webp',
     desc: '개빡친 강아지',
@@ -141,64 +141,64 @@ const MOCK_DATA = [
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test long desc test ',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d71',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d78',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d70',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d75',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d90',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29z89',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29min',
-    author: 'hi',
-    authorId: 'mongja',
+    user: 'hi',
+    userId: 'mongja',
     profileImgUrl: 'profileImgUrl',
     desc: 'desc',
     createdAt: '2일전',

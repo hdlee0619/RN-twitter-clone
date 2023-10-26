@@ -3,16 +3,16 @@ import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 const Detail = props => {
-  const {author, profileImgUrl, createdAt, authorId, desc, contentImg} =
+  const {user, profileImgUrl, createdAt, userId, desc, contentImg} =
     props.route.params;
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.authorContainer}>
+      <View style={styles.userContainer}>
         <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
         <View>
-          <Text style={styles.author}>{author}</Text>
-          <Text style={styles.authorId}>@{authorId}</Text>
+          <Text style={styles.user}>{user}</Text>
+          <Text style={styles.userId}>@{userId}</Text>
         </View>
       </View>
       <View style={styles.descContainer}>
@@ -41,16 +41,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#c8c8c8',
   },
-  authorContainer: {
+  userContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  author: {
+  user: {
     fontSize: 15,
     color: 'black',
     fontWeight: 'bold',
   },
-  authorId: {fontSize: 15, color: '#555555'},
+  userId: {fontSize: 15, color: '#555555'},
   descContainer: {
     paddingVertical: 16,
   },
