@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import NavigationContext from '../context/NavigationContext';
 
 import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
 const Item = ({
-  navigation,
   author,
+  navigation,
   profileImgUrl,
   authorId,
   createdAt,
@@ -21,7 +22,7 @@ const Item = ({
   };
 
   return (
-    <Pressable onPress={() => navigation.navigate('Detail', {...detailProps})}>
+    <Pressable onPress={() => navigation.navigate('Detail', detailProps)}>
       <View style={styles.itemContainer}>
         <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
         <View style={styles.contentContainer}>
@@ -44,7 +45,8 @@ const Item = ({
   );
 };
 
-const FeedList = ({navigation}) => {
+const FeedList = () => {
+  const navigation = useContext(NavigationContext);
   return (
     <FlatList
       data={MOCK_DATA}

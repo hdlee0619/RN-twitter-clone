@@ -33,8 +33,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 50,
     paddingHorizontal: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: '#c8c8c8',
     ...Platform.select({
       android: {
         marginTop: 16,

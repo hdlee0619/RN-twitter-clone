@@ -3,13 +3,16 @@ import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 import Header from '../components/Header';
-import FeedList from '../components/FeedList';
+import TabView from '../components/TabView';
+import NavigationContext from '../context/NavigationContext';
 
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation} />
-      <FeedList navigation={navigation} />
+      <NavigationContext.Provider value={navigation}>
+        <TabView />
+      </NavigationContext.Provider>
     </SafeAreaView>
   );
 };
@@ -17,5 +20,5 @@ const Home = ({navigation}) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: {flex: 1, backgroundColor: 'white'},
 });
