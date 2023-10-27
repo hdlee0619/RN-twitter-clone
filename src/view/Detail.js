@@ -10,7 +10,7 @@ const Detail = props => {
     <ScrollView style={styles.container}>
       <View style={styles.userContainer}>
         <Image style={styles.profileImg} source={{uri: profileImgUrl}} />
-        <View>
+        <View style={styles.userInfoContainer}>
           <Text style={styles.user}>{user}</Text>
           <Text style={styles.userId}>@{userId}</Text>
         </View>
@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  userInfoContainer: {
+    marginLeft: 4,
+  },
   user: {
     fontSize: 15,
     color: 'black',
@@ -61,11 +64,12 @@ const styles = StyleSheet.create({
   contentImg: {
     width: '100%',
     minHeight: 200,
-    marginVertical: 16,
+    marginTop: 16,
     borderRadius: 16,
     resizeMode: 'cover',
   },
   createdAt: {
+    marginTop: 16,
     fontSize: 14,
     color: '#666666',
   },
