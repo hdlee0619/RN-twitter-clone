@@ -30,12 +30,13 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    height: 50,
+    alignItems: 'flex-end',
     paddingHorizontal: 8,
+    backgroundColor: 'white',
     ...Platform.select({
+      ios: {height: 100},
       android: {
-        marginTop: 16,
+        height: 60,
       },
     }),
   },

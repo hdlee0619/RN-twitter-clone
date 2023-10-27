@@ -2,14 +2,12 @@ import React from 'react';
 
 import {SafeAreaView, StyleSheet} from 'react-native';
 
-import Header from '../components/Header';
 import TabView from '../components/TabView';
 import NavigationContext from '../context/NavigationContext';
 
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header navigation={navigation} />
       <NavigationContext.Provider value={navigation}>
         <TabView />
       </NavigationContext.Provider>
