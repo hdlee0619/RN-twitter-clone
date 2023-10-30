@@ -22,6 +22,13 @@ const Item = ({
   desc,
   contentImg,
 }) => {
+  const [height, setHeight] = useState(0);
+  const {width} = Dimensions.get('window');
+
+  contentImg
+    ? Image.getSize(contentImg, (w, h) => setHeight(h * (width / w)))
+    : null;
+
   const detailProps = {
     user,
     profileImgUrl,
@@ -29,14 +36,8 @@ const Item = ({
     createdAt,
     desc,
     contentImg,
+    height,
   };
-
-  const [height, setHeight] = useState(0);
-  const {width} = Dimensions.get('window');
-
-  contentImg
-    ? Image.getSize(contentImg, (w, h) => setHeight(h * (width / w)))
-    : null;
 
   return (
     <Pressable onPress={() => navigation.navigate('Detail', detailProps)}>

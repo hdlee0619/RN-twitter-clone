@@ -3,7 +3,7 @@ import React from 'react';
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 const Detail = props => {
-  const {user, profileImgUrl, createdAt, userId, desc, contentImg} =
+  const {user, profileImgUrl, createdAt, userId, desc, contentImg, height} =
     props.route.params;
 
   return (
@@ -18,7 +18,7 @@ const Detail = props => {
       <View style={styles.descContainer}>
         <Text style={styles.desc}>{desc}</Text>
         {contentImg && (
-          <Image style={styles.contentImg} source={{uri: contentImg}} />
+          <Image style={styles.contentImg} source={{uri: contentImg, height}} />
         )}
         <Text style={styles.createdAt}>{createdAt}</Text>
       </View>
