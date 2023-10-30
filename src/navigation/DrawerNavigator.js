@@ -11,7 +11,7 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen
-        name="Home"
+        name="Home Drawer"
         component={StackNavigator}
         options={{headerShown: false}}
       />
