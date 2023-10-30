@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {Text} from 'react-native';
+import FeedList from './FeedList';
 
 const FollowList = () => {
-  return <Text>FollowList</Text>;
+  return <FeedList />;
 };
 
 export default FollowList;
