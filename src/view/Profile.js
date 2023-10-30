@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
   },
-  calendarIcon: {marginBottom: 4, color: '#666666'},
-  joinedAt: {marginLeft: 4, fontSize: 13, color: '#666666', lineHeight: 13},
+  calendarIcon: {marginTop: 4, marginBottom: 4, color: '#666666'},
+  joinedAt: {marginLeft: 4, fontSize: 13, color: '#666666', lineHeight: 16},
   descContainer: {
     paddingVertical: 8,
   },
