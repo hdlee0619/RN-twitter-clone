@@ -1,79 +1,26 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Twitter Clone
 
-# Getting Started
+## 프로젝트 정보
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+React native(이하 RN) 연습을 위한 트위터 클론 프로젝트 입니다.
 
-## Step 1: Home the Metro Server
+**기간** : 23.10.16 ~ 23.10.30
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+**기능**
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- RN에서 사용할 수 있는 ScrollView, View, FlatList, Text 등을 간단히 사용해보고 style을 적용해 봤습니다.
 
-```bash
-# using npm
-npm start
+- [React Navigation](https://reactnavigation.org/)을 사용해서 Drawer navigation, Stack navigation을 사용하여 페이지 이동을 구현했습니다. 
+추가로 React Navigation에서 소개하는 Libraries 중 Tab View를 사용하였습니다. [(Tab View 가이드)](https://reactnavigation.org/docs/tab-view/)
 
-# OR using Yarn
-yarn start
-```
+- 아이콘은 [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons)을 사용하였습니다.
 
-## Step 2: Home your Application
+## 화면
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+|                                                                             **Home page**                                                                              |                                                                             **Detail page**                                                                             |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![](https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaBnEU_4TjE3qivcHCZ7D3PaIc89O6DvEK-hQnHaOw47fcqMIx0RHAEBs79_2hrKI-JZuRoTGAIUY5nbYG67o_TPN2CWwA=w1733-h1035) | ![](https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaAg7EvkndHlzc6hGu8EZzEoYdfrraXPmKxFeQNwBvd1l2Kt45nYgXUApA3h1bnJVPcxZsM2VBJpdjtRpBaz0aBsPEytyg=w1733-h1035)  |
+|                                                                            **Drawer Open**                                                                             |                                                                            **Profile page**                                                                             |
+| ![](https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaCTKoqGn1Q-jarlBZ-mTba2TcVM1dgX8eeIgGmVK0DrO7DfTMFRIiCw614Dhw6xDTNpC7Eif4UA3C5S1DnOlyfe-VwG3A=w1733-h1035) | ![](https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaDPx__TDd57LStIKYBQwVtzUDxKBFyR7l4FH63q4enufs9H5uxqitTfrB0pY5_cDN5HHXeP4gKzixpkQZgOkCZFx0ji6Q=w1354-h1035)  |
+|                                                                            **Setting page**                                                                            |
+| ![](https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaD0LK7UvX37Q_lnTzSTp2KPU8bhNRx6HSa8PYzOarOenkx9OqAtGkk6zk7LVFGfv8Qyf6wZv-YQqvrVMfMfqNYikDTScw=w1733-h1035) |
